@@ -8,34 +8,6 @@
 
 /home/oer/Seongin/Software/ARGOS/Beeclust/build/src/beeclust_autogen/mocs_compilation.cpp
 
-/home/oer/Seongin/Software/ARGOS/Beeclust/src/beeclust_proximity_default_sensor.cpp
-argos3/core/simulator/simulator.h
--
-argos3/core/simulator/entity/embodied_entity.h
--
-argos3/core/simulator/entity/composable_entity.h
--
-beeclust_proximity_sensor_equipped_entity.h
-/home/oer/Seongin/Software/ARGOS/Beeclust/src/beeclust_proximity_sensor_equipped_entity.h
-beeclust_proximity_default_sensor.h
-/home/oer/Seongin/Software/ARGOS/Beeclust/src/beeclust_proximity_default_sensor.h
-
-/home/oer/Seongin/Software/ARGOS/Beeclust/src/beeclust_proximity_default_sensor.h
-string
--
-map
--
-argos3/plugins/robots/generic/control_interface/ci_proximity_sensor.h
--
-argos3/core/utility/math/range.h
--
-argos3/core/utility/math/rng.h
--
-argos3/core/simulator/space/space.h
--
-argos3/core/simulator/sensor.h
--
-
 /home/oer/Seongin/Software/ARGOS/Beeclust/src/beeclust_proximity_sensor_equipped_entity.cpp
 beeclust_proximity_sensor_equipped_entity.h
 /home/oer/Seongin/Software/ARGOS/Beeclust/src/beeclust_proximity_sensor_equipped_entity.h
@@ -151,6 +123,8 @@ argos3/core/simulator/entity/composable_entity.h
 -
 argos3/core/simulator/simulator.h
 -
+beeclust_proximity_sensor_equipped_entity.h
+/home/oer/Seongin/Software/ARGOS/Beeclust/src/beeclust_proximity_sensor_equipped_entity.h
 footbot_beeclust_proximity_sensor.h
 /home/oer/Seongin/Software/ARGOS/Beeclust/src/footbot_beeclust_proximity_sensor.h
 
@@ -161,8 +135,14 @@ map
 -
 ci_footbot_beeclust_proximity_sensor.h
 /home/oer/Seongin/Software/ARGOS/Beeclust/src/ci_footbot_beeclust_proximity_sensor.h
-beeclust_proximity_default_sensor.h
-/home/oer/Seongin/Software/ARGOS/Beeclust/src/beeclust_proximity_default_sensor.h
+argos3/core/utility/math/range.h
+-
+argos3/core/utility/math/rng.h
+-
+argos3/core/simulator/space/space.h
+-
+argos3/core/simulator/sensor.h
+-
 
 /home/oer/Seongin/Software/ARGOS/Beeclust/src/qtopengl_footbot_beeclust.cpp
 qtopengl_footbot_beeclust.h
@@ -1938,10 +1918,6 @@ argos3/core/utility/math/vector3.h
 
 /usr/local/include/argos3/plugins/robots/generic/control_interface/ci_differential_steering_actuator.h
 argos3/core/control_interface/ci_actuator.h
--
-
-/usr/local/include/argos3/plugins/robots/generic/control_interface/ci_proximity_sensor.h
-argos3/core/control_interface/ci_sensor.h
 -
 
 /usr/local/include/argos3/plugins/simulator/entities/battery_equipped_entity.h

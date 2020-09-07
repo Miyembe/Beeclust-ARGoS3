@@ -29,12 +29,12 @@ namespace argos {
  void CBeeClustProximityDefaultSensor::SetRobot(CComposableEntity& c_entity) {
  try {
  m_pcEmbodiedEntity = &(c_entity.GetComponent<CEmbodiedEntity>("body"));
- m_pcControllableEntity = &(c_entity.GetComponent<CControllableEntity>("controller"));
- m_pcProximityEntity = &(c_entity.GetComponent<CBeeClustProximitySensorEquippedEntity>("beeclust_proximity_sensors"));
- m_pcProximityEntity->Enable();
+ m_pcControllableEntity = &(c_entity.GetComponent<CControllableEntity>("controllw"));
+ //m_pcProximityEntity = &(c_entity.GetComponent<CBeeClustProximitySensorEquippedEntity>("sbs"));
+ //m_pcProximityEntity->Enable();
  }
  catch(CARGoSException& ex) {
- THROW_ARGOSEXCEPTION_NESTED("Can't set robot for the proximity default sensor", ex);
+ THROW_ARGOSEXCEPTION_NESTED("babo Can't set robot for the proximity default sensor", ex);
  }
  }
 
@@ -43,7 +43,7 @@ namespace argos {
 
  void CBeeClustProximityDefaultSensor::Init(TConfigurationNode& t_tree) {
  try {
- CCI_ProximitySensor::Init(t_tree);
+ CCI_BeeClustProximitySensor::Init(t_tree);
  /* Show rays? */
  GetNodeAttributeOrDefault(t_tree, "show_rays", m_bShowRays, m_bShowRays);
  /* Parse noise level */

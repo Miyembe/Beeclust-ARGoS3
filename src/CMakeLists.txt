@@ -13,10 +13,10 @@ add_library(beeclust SHARED
   footbot_beeclust_entity.h
   dynamics2d_footbot_beeclust_model.cpp
   dynamics2d_footbot_beeclust_model.h
-  beeclust_proximity_default_sensor.h
-  beeclust_proximity_default_sensor.cpp
-
-
+  #beeclust_proximity_default_sensor.h
+  #beeclust_proximity_default_sensor.cpp
+  #ci_beeclust_proximity_sensor.cpp
+  #ci_beeclust_proximity_sensor.h
 )
 target_link_libraries(beeclust
   argos3core_simulator

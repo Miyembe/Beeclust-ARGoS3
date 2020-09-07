@@ -137,14 +137,14 @@ namespace argos {
  cTurretAnchor);
  /* Proximity sensor equipped entity */
  m_pcProximitySensorEquippedEntity =
- new CBeeClustProximitySensorEquippedEntity(this, "beeclust_proximity_0");
+ new CBeeClustProximitySensorEquippedEntity(this, "beeclustproximity_0");
  AddComponent(*m_pcProximitySensorEquippedEntity);
  m_pcProximitySensorEquippedEntity->AddSensorRing(
  CVector3(0.0f, 0.0f, PROXIMITY_SENSOR_RING_ELEVATION),
  PROXIMITY_SENSOR_RING_RADIUS,
  PROXIMITY_SENSOR_RING_START_ANGLE,
  PROXIMITY_SENSOR_RING_RANGE,
- 24,
+ 12,
  m_pcEmbodiedEntity->GetOriginAnchor());
  /* Light sensor equipped entity */
  m_pcLightSensorEquippedEntity =
@@ -298,14 +298,14 @@ namespace argos {
  cTurretAnchor);
  /* 20200905 chagned into Proximity sensor equipped entity */
  m_pcProximitySensorEquippedEntity =
- new CBeeClustProximitySensorEquippedEntity(this, "beeclust_proximity_0");
+ new CBeeClustProximitySensorEquippedEntity(this, "beeclustproximity_0");
  AddComponent(*m_pcProximitySensorEquippedEntity);
  m_pcProximitySensorEquippedEntity->AddSensorRing(
  CVector3(0.0f, 0.0f, PROXIMITY_SENSOR_RING_ELEVATION),
  PROXIMITY_SENSOR_RING_RADIUS,
  PROXIMITY_SENSOR_RING_START_ANGLE,
  PROXIMITY_SENSOR_RING_RANGE,
- 24,
+ 12,
  m_pcEmbodiedEntity->GetOriginAnchor());
  /* Light sensor equipped entity */
  m_pcLightSensorEquippedEntity =

@@ -16,7 +16,8 @@ namespace argos {
 }
 
 //#include <argos3/plugins/robots/generic/control_interface/ci_proximity_sensor.h>
-#include <argos3/plugins/robots/generic/control_interface/ci_proximity_sensor.h>
+//#include <argos3/plugins/robots/generic/control_interface/ci_proximity_sensor.h>
+#include "ci_beeclust_proximity_sensor.h"
 #include <argos3/core/utility/math/range.h>
 #include <argos3/core/utility/math/rng.h>
 #include <argos3/core/simulator/space/space.h>
@@ -25,7 +26,7 @@ namespace argos {
 namespace argos {
 
    class CBeeClustProximityDefaultSensor: public CSimulatedSensor,
-                                     public CCI_ProximitySensor {
+                                     public CCI_BeeClustProximitySensor {
 
    public:
 

@@ -167,33 +167,6 @@ beeclust_autogen/mocs_compilation.cpp.s:
 	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/beeclust_autogen/mocs_compilation.cpp.s
 .PHONY : beeclust_autogen/mocs_compilation.cpp.s
 
-beeclust_proximity_default_sensor.o: beeclust_proximity_default_sensor.cpp.o
-
-.PHONY : beeclust_proximity_default_sensor.o
-
-# target to build an object file
-beeclust_proximity_default_sensor.cpp.o:
-	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o
-.PHONY : beeclust_proximity_default_sensor.cpp.o
-
-beeclust_proximity_default_sensor.i: beeclust_proximity_default_sensor.cpp.i
-
-.PHONY : beeclust_proximity_default_sensor.i
-
-# target to preprocess a source file
-beeclust_proximity_default_sensor.cpp.i:
-	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.i
-.PHONY : beeclust_proximity_default_sensor.cpp.i
-
-beeclust_proximity_default_sensor.s: beeclust_proximity_default_sensor.cpp.s
-
-.PHONY : beeclust_proximity_default_sensor.s
-
-# target to generate assembly for a file
-beeclust_proximity_default_sensor.cpp.s:
-	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.s
-.PHONY : beeclust_proximity_default_sensor.cpp.s
-
 beeclust_proximity_sensor_equipped_entity.o: beeclust_proximity_sensor_equipped_entity.cpp.o
 
 .PHONY : beeclust_proximity_sensor_equipped_entity.o
@@ -396,9 +369,6 @@ help:
 	@echo "... beeclust_autogen/mocs_compilation.o"
 	@echo "... beeclust_autogen/mocs_compilation.i"
 	@echo "... beeclust_autogen/mocs_compilation.s"
-	@echo "... beeclust_proximity_default_sensor.o"
-	@echo "... beeclust_proximity_default_sensor.i"
-	@echo "... beeclust_proximity_default_sensor.s"
 	@echo "... beeclust_proximity_sensor_equipped_entity.o"
 	@echo "... beeclust_proximity_sensor_equipped_entity.i"
 	@echo "... beeclust_proximity_sensor_equipped_entity.s"

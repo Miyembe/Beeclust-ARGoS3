@@ -225,33 +225,9 @@ src/CMakeFiles/beeclust.dir/dynamics2d_footbot_beeclust_model.cpp.o.provides: sr
 src/CMakeFiles/beeclust.dir/dynamics2d_footbot_beeclust_model.cpp.o.provides.build: src/CMakeFiles/beeclust.dir/dynamics2d_footbot_beeclust_model.cpp.o
 
 
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: src/CMakeFiles/beeclust.dir/flags.make
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: ../src/beeclust_proximity_default_sensor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oer/Seongin/Software/ARGOS/Beeclust/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o"
-	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o -c /home/oer/Seongin/Software/ARGOS/Beeclust/src/beeclust_proximity_default_sensor.cpp
-
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.i"
-	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/oer/Seongin/Software/ARGOS/Beeclust/src/beeclust_proximity_default_sensor.cpp > CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.i
-
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.s"
-	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/oer/Seongin/Software/ARGOS/Beeclust/src/beeclust_proximity_default_sensor.cpp -o CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.s
-
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o.requires:
-
-.PHONY : src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o.requires
-
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o.provides: src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o.provides.build
-.PHONY : src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o.provides
-
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o.provides.build: src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o
-
-
 src/CMakeFiles/beeclust.dir/beeclust_autogen/mocs_compilation.cpp.o: src/CMakeFiles/beeclust.dir/flags.make
 src/CMakeFiles/beeclust.dir/beeclust_autogen/mocs_compilation.cpp.o: src/beeclust_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oer/Seongin/Software/ARGOS/Beeclust/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/beeclust.dir/beeclust_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/oer/Seongin/Software/ARGOS/Beeclust/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/beeclust.dir/beeclust_autogen/mocs_compilation.cpp.o"
 	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/beeclust.dir/beeclust_autogen/mocs_compilation.cpp.o -c /home/oer/Seongin/Software/ARGOS/Beeclust/build/src/beeclust_autogen/mocs_compilation.cpp
 
 src/CMakeFiles/beeclust.dir/beeclust_autogen/mocs_compilation.cpp.i: cmake_force
@@ -282,7 +258,6 @@ beeclust_OBJECTS = \
 "CMakeFiles/beeclust.dir/qtopengl_footbot_beeclust.cpp.o" \
 "CMakeFiles/beeclust.dir/footbot_beeclust_entity.cpp.o" \
 "CMakeFiles/beeclust.dir/dynamics2d_footbot_beeclust_model.cpp.o" \
-"CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o" \
 "CMakeFiles/beeclust.dir/beeclust_autogen/mocs_compilation.cpp.o"
 
 # External object files for target beeclust
@@ -295,13 +270,12 @@ src/libbeeclust.so: src/CMakeFiles/beeclust.dir/footbot_beeclust_proximity_senso
 src/libbeeclust.so: src/CMakeFiles/beeclust.dir/qtopengl_footbot_beeclust.cpp.o
 src/libbeeclust.so: src/CMakeFiles/beeclust.dir/footbot_beeclust_entity.cpp.o
 src/libbeeclust.so: src/CMakeFiles/beeclust.dir/dynamics2d_footbot_beeclust_model.cpp.o
-src/libbeeclust.so: src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o
 src/libbeeclust.so: src/CMakeFiles/beeclust.dir/beeclust_autogen/mocs_compilation.cpp.o
 src/libbeeclust.so: src/CMakeFiles/beeclust.dir/build.make
 src/libbeeclust.so: /usr/lib/x86_64-linux-gnu/liblua5.3.so
 src/libbeeclust.so: /usr/lib/x86_64-linux-gnu/libm.so
 src/libbeeclust.so: src/CMakeFiles/beeclust.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/oer/Seongin/Software/ARGOS/Beeclust/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX shared library libbeeclust.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/oer/Seongin/Software/ARGOS/Beeclust/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library libbeeclust.so"
 	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/beeclust.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -316,7 +290,6 @@ src/CMakeFiles/beeclust.dir/requires: src/CMakeFiles/beeclust.dir/footbot_beeclu
 src/CMakeFiles/beeclust.dir/requires: src/CMakeFiles/beeclust.dir/qtopengl_footbot_beeclust.cpp.o.requires
 src/CMakeFiles/beeclust.dir/requires: src/CMakeFiles/beeclust.dir/footbot_beeclust_entity.cpp.o.requires
 src/CMakeFiles/beeclust.dir/requires: src/CMakeFiles/beeclust.dir/dynamics2d_footbot_beeclust_model.cpp.o.requires
-src/CMakeFiles/beeclust.dir/requires: src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o.requires
 src/CMakeFiles/beeclust.dir/requires: src/CMakeFiles/beeclust.dir/beeclust_autogen/mocs_compilation.cpp.o.requires
 
 .PHONY : src/CMakeFiles/beeclust.dir/requires

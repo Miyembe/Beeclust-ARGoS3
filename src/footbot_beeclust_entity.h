@@ -95,7 +95,7 @@ namespace argos {
  return *m_pcPerspectiveCameraEquippedEntity;
  }
 
- inline CBeeClustProximitySensorEquippedEntity& GetProximitySensorEquippedEntity() {
+ inline CBeeClustProximitySensorEquippedEntity& GetBeeClustProximitySensorEquippedEntity() {
  return *m_pcProximitySensorEquippedEntity;
  }
 
@@ -116,7 +116,7 @@ namespace argos {
  }
 
  virtual std::string GetTypeDescription() const {
- return "foot-bot";
+ return "foot-bot-beeclust";
  }
 
  private:

@@ -3,61 +3,6 @@
 
 src/CMakeFiles/beeclust.dir/beeclust_autogen/mocs_compilation.cpp.o: src/beeclust_autogen/mocs_compilation.cpp
 
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: ../src/beeclust_proximity_default_sensor.cpp
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: ../src/beeclust_proximity_default_sensor.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: ../src/beeclust_proximity_sensor_equipped_entity.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/include/lua5.3/lauxlib.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/include/lua5.3/lua.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/include/lua5.3/luaconf.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/include/lua5.3/lualib.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/config.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/control_interface/ci_actuator.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/control_interface/ci_controller.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/control_interface/ci_sensor.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/simulator/entity/composable_entity.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/simulator/entity/controllable_entity.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/simulator/entity/embodied_entity.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/simulator/entity/entity.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/simulator/medium/medium.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/simulator/physics_engine/physics_engine.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/simulator/physics_engine/physics_model.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/simulator/sensor.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/simulator/simulator.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/simulator/space/positional_indices/grid.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/simulator/space/positional_indices/grid_impl.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/simulator/space/positional_indices/positional_index.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/simulator/space/positional_indices/space_hash.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/simulator/space/space.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/configuration/argos_configuration.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/configuration/argos_exception.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/configuration/base_configurable_resource.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/configuration/tinyxml/ticpp.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/configuration/tinyxml/ticpprc.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/configuration/tinyxml/tinystr.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/configuration/tinyxml/tinyxml.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/datatypes/any.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/datatypes/datatypes.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/datatypes/set.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/logging/argos_colored_text.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/logging/argos_log.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/math/angles.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/math/general.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/math/matrix/matrix.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/math/matrix/rotationmatrix3.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/math/matrix/squarematrix.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/math/quaternion.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/math/range.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/math/ray2.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/math/ray3.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/math/rng.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/math/vector2.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/math/vector3.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/plugins/factory.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/plugins/factory_impl.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/plugins/vtable.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/core/utility/string_utilities.h
-src/CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o: /usr/local/include/argos3/plugins/robots/generic/control_interface/ci_proximity_sensor.h
-
 src/CMakeFiles/beeclust.dir/beeclust_proximity_sensor_equipped_entity.cpp.o: ../src/beeclust_proximity_sensor_equipped_entity.cpp
 src/CMakeFiles/beeclust.dir/beeclust_proximity_sensor_equipped_entity.cpp.o: ../src/beeclust_proximity_sensor_equipped_entity.h
 src/CMakeFiles/beeclust.dir/beeclust_proximity_sensor_equipped_entity.cpp.o: /usr/include/lua5.3/lauxlib.h
@@ -310,7 +255,7 @@ src/CMakeFiles/beeclust.dir/footbot_beeclust_entity.cpp.o: /usr/local/include/ar
 src/CMakeFiles/beeclust.dir/footbot_beeclust_entity.cpp.o: /usr/local/include/argos3/plugins/simulator/entities/wheeled_entity.h
 src/CMakeFiles/beeclust.dir/footbot_beeclust_entity.cpp.o: /usr/local/include/argos3/plugins/simulator/entities/wifi_equipped_entity.h
 
-src/CMakeFiles/beeclust.dir/footbot_beeclust_proximity_sensor.cpp.o: ../src/beeclust_proximity_default_sensor.h
+src/CMakeFiles/beeclust.dir/footbot_beeclust_proximity_sensor.cpp.o: ../src/beeclust_proximity_sensor_equipped_entity.h
 src/CMakeFiles/beeclust.dir/footbot_beeclust_proximity_sensor.cpp.o: ../src/ci_footbot_beeclust_proximity_sensor.h
 src/CMakeFiles/beeclust.dir/footbot_beeclust_proximity_sensor.cpp.o: ../src/footbot_beeclust_proximity_sensor.cpp
 src/CMakeFiles/beeclust.dir/footbot_beeclust_proximity_sensor.cpp.o: ../src/footbot_beeclust_proximity_sensor.h
@@ -364,7 +309,6 @@ src/CMakeFiles/beeclust.dir/footbot_beeclust_proximity_sensor.cpp.o: /usr/local/
 src/CMakeFiles/beeclust.dir/footbot_beeclust_proximity_sensor.cpp.o: /usr/local/include/argos3/core/utility/plugins/factory_impl.h
 src/CMakeFiles/beeclust.dir/footbot_beeclust_proximity_sensor.cpp.o: /usr/local/include/argos3/core/utility/plugins/vtable.h
 src/CMakeFiles/beeclust.dir/footbot_beeclust_proximity_sensor.cpp.o: /usr/local/include/argos3/core/utility/string_utilities.h
-src/CMakeFiles/beeclust.dir/footbot_beeclust_proximity_sensor.cpp.o: /usr/local/include/argos3/plugins/robots/generic/control_interface/ci_proximity_sensor.h
 
 src/CMakeFiles/beeclust.dir/qtopengl_footbot_beeclust.cpp.o: ../src/footbot_beeclust_entity.h
 src/CMakeFiles/beeclust.dir/qtopengl_footbot_beeclust.cpp.o: ../src/qtopengl_footbot_beeclust.cpp

@@ -17,8 +17,8 @@ namespace argos {
  /****************************************/
 
  CCI_FootBotBeeClustProximitySensor::CCI_FootBotBeeClustProximitySensor() :
- m_tReadings(12) {
- for(size_t i = 0; i < 12; ++i) {
+ m_tReadings(3) {
+ for(size_t i = 0; i < 3; ++i) {
  m_tReadings[i].Angle = START_ANGLE + i * SPACING;
  m_tReadings[i].Angle.SignedNormalize();
  }
@@ -36,7 +36,7 @@ namespace argos {
 
 #ifdef ARGOS_WITH_LUA
  void CCI_FootBotBeeClustProximitySensor::CreateLuaState(lua_State* pt_lua_state) {
- CLuaUtility::OpenRobotStateTable(pt_lua_state, "proximity");
+ CLuaUtility::OpenRobotStateTable(pt_lua_state, "beeclustproximity");
  for(size_t i = 0; i < GetReadings().size(); ++i) {
  CLuaUtility::StartTable(pt_lua_state, i+1 );
  CLuaUtility::AddToTable(pt_lua_state, "angle", m_tReadings[i].Angle);
@@ -52,7 +52,7 @@ namespace argos {
 
 #ifdef ARGOS_WITH_LUA
  void CCI_FootBotBeeClustProximitySensor::ReadingsToLuaState(lua_State* pt_lua_state) {
- lua_getfield(pt_lua_state, -1, "proximity");
+ lua_getfield(pt_lua_state, -1, "beeclustproximity");
  for(size_t i = 0; i < GetReadings().size(); ++i) {
  lua_pushnumber(pt_lua_state, i+1 );
  lua_gettable (pt_lua_state, -2 );

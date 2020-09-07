@@ -8,7 +8,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/beeclust.dir/qtopengl_footbot_beeclust.cpp.o"
   "CMakeFiles/beeclust.dir/footbot_beeclust_entity.cpp.o"
   "CMakeFiles/beeclust.dir/dynamics2d_footbot_beeclust_model.cpp.o"
-  "CMakeFiles/beeclust.dir/beeclust_proximity_default_sensor.cpp.o"
   "CMakeFiles/beeclust.dir/beeclust_autogen/mocs_compilation.cpp.o"
   "libbeeclust.pdb"
   "libbeeclust.so"

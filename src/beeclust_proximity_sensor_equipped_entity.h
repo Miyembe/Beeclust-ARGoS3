@@ -44,7 +44,7 @@ namespace argos {
  virtual void Init(TConfigurationNode& t_tree);
 
  virtual std::string GetTypeDescription() const {
- return "beeclust_proximity_sensors";
+ return "beeclustproximity_sensors";
  }
 
  virtual void Enable();
