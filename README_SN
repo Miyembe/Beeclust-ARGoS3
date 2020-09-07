@@ -1,0 +1,19 @@
+*** Explanation about the new sensor and controller *** 
+
+I am trying to build a new controller for footbot which detect pheromone value (just value of matrix element with the size of arena * resolution). 
+
+In phero_loop_functions, I put a matrix which will have predefined value of pheromone for test. - It works fine. 
+
+In controllers/footbot_phero, there is a controller I designed. 
+
+In sensor_entity/phero_sensor_equipped_entity, there is a equipped entity (used the template of ground_sensor_equipped_entity
+
+In simulator/footbot_phero_sensor, there is phero sensor cpp & header files
+
+In control_interface/ci_footbot_phero_sensor, there is a control interface file with the controller and sensor adopted from other control interface (foraging)
+
+Mostly, I have adopted the existing files and modified them as I wanted. 
+
+The error does not occur until I try getting phero_sensor in footbot_phero.cpp. I checked that the cpp file for ci_footbot_phero_sensor is included and I did not add new function from the ci_footbot_ground_sensor.cpp which might cause unimplemented method problem.  
+
+
