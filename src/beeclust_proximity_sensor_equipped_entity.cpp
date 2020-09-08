@@ -167,6 +167,32 @@ namespace argos {
  }
  }
 
+/****************************************/
+/****************************************/
+
+ void CBeeClustProximitySensorEquippedEntity::AddSensorCustomRing(const CVector3& c_center,
+ Real f_radius,
+ const CRadians& c_start_angle,
+ const CRadians& c_spacing_angle,
+ Real f_range,
+ UInt32 un_num_sensors,
+ SAnchor& s_anchor
+ ) {
+ CRadians cSensorSpacing = c_spacing_angle / un_num_sensors;
+ CRadians cAngle;
+ CVector3 cOff, cDir;
+ for(UInt32 i = 0; i < un_num_sensors; ++i) {
+ cAngle = c_start_angle + i * cSensorSpacing;
+ cAngle.SignedNormalize();
+ cOff.Set(f_radius, 0.0f, 0.0f);
+ cOff.RotateZ(cAngle);
+ cOff += c_center;
+ cDir.Set(f_range, 0.0f, 0.0f);
+ cDir.RotateZ(cAngle);
+ AddSensor(cOff, cDir, f_range, s_anchor);
+ }
+ }
+
  /****************************************/
  /****************************************/
 

@@ -35,8 +35,16 @@ namespace argos {
 
  static const Real PROXIMITY_SENSOR_RING_ELEVATION = 0.06f;
  static const Real PROXIMITY_SENSOR_RING_RADIUS = BODY_RADIUS;
- static const CRadians PROXIMITY_SENSOR_RING_START_ANGLE = CRadians((ARGOS_PI / 12.0f) * 0.5f);
+ static const CRadians PROXIMITY_SENSOR_RING_START_ANGLE = CRadians((ARGOS_PI / 12.0f) * 0.0f);
+ static const CRadians PROXIMITY_SENSOR_RING_SPACING_ANGLE = CRadians((ARGOS_PI)/2.0f);
+ static const CRadians PROXIMITY_SENSOR_CUSTOM_START_ANGLE = -PROXIMITY_SENSOR_RING_SPACING_ANGLE/2;
  static const Real PROXIMITY_SENSOR_RING_RANGE = 0.1f;
+ static const UInt32 PROXIMITY_SENSOR_NUMBERS = 3;
+/* 20200907 commented out for playing */
+//  static const Real PROXIMITY_SENSOR_RING_ELEVATION = 0.06f;
+//  static const Real PROXIMITY_SENSOR_RING_RADIUS = BODY_RADIUS;
+//  static const CRadians PROXIMITY_SENSOR_RING_START_ANGLE = CRadians((ARGOS_PI / 12.0f) * 0.5f);
+//  static const Real PROXIMITY_SENSOR_RING_RANGE = 0.1f;
 
  static const Real LED_RING_ELEVATION = 0.085f;
  static const Real RAB_ELEVATION = 0.1f;
@@ -139,12 +147,13 @@ namespace argos {
  m_pcProximitySensorEquippedEntity =
  new CBeeClustProximitySensorEquippedEntity(this, "beeclustproximity_0");
  AddComponent(*m_pcProximitySensorEquippedEntity);
- m_pcProximitySensorEquippedEntity->AddSensorRing(
+ m_pcProximitySensorEquippedEntity->AddSensorCustomRing(
  CVector3(0.0f, 0.0f, PROXIMITY_SENSOR_RING_ELEVATION),
  PROXIMITY_SENSOR_RING_RADIUS,
- PROXIMITY_SENSOR_RING_START_ANGLE,
+ PROXIMITY_SENSOR_CUSTOM_START_ANGLE + PROXIMITY_SENSOR_RING_SPACING_ANGLE / (PROXIMITY_SENSOR_NUMBERS * 2),
+ PROXIMITY_SENSOR_RING_SPACING_ANGLE,
  PROXIMITY_SENSOR_RING_RANGE,
- 12,
+ PROXIMITY_SENSOR_NUMBERS,
  m_pcEmbodiedEntity->GetOriginAnchor());
  /* Light sensor equipped entity */
  m_pcLightSensorEquippedEntity =
@@ -300,12 +309,13 @@ namespace argos {
  m_pcProximitySensorEquippedEntity =
  new CBeeClustProximitySensorEquippedEntity(this, "beeclustproximity_0");
  AddComponent(*m_pcProximitySensorEquippedEntity);
- m_pcProximitySensorEquippedEntity->AddSensorRing(
+ m_pcProximitySensorEquippedEntity->AddSensorCustomRing(
  CVector3(0.0f, 0.0f, PROXIMITY_SENSOR_RING_ELEVATION),
  PROXIMITY_SENSOR_RING_RADIUS,
- PROXIMITY_SENSOR_RING_START_ANGLE,
+ PROXIMITY_SENSOR_CUSTOM_START_ANGLE + PROXIMITY_SENSOR_RING_SPACING_ANGLE / (PROXIMITY_SENSOR_NUMBERS * 2),
+ PROXIMITY_SENSOR_RING_SPACING_ANGLE,
  PROXIMITY_SENSOR_RING_RANGE,
- 12,
+ PROXIMITY_SENSOR_NUMBERS,
  m_pcEmbodiedEntity->GetOriginAnchor());
  /* Light sensor equipped entity */
  m_pcLightSensorEquippedEntity =

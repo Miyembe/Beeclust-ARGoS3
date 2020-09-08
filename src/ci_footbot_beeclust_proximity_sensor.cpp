@@ -10,7 +10,7 @@ namespace argos {
  /****************************************/
  /****************************************/
 
- static CRadians SPACING = CRadians(ARGOS_PI / 12.0f);
+ static CRadians SPACING = CRadians(ARGOS_PI / 1.5f);
  static CRadians START_ANGLE = SPACING * 0.5f;
 
  /****************************************/
