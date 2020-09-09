@@ -106,9 +106,15 @@ private:
    Real m_fDelta;
    /* Wheel speed. */
    Real m_fWheelVelocity;
+   /* Wheel Speed for collision avoidance */
+   Real m_fDriftVelocity;
+   /* Sensor Value array */
+   Real sensor_val[3];
    /* Angle tolerance range to go straight.
     * It is set to [-alpha,alpha]. */
    CRange<CRadians> m_cGoStraightAngleRange;
+
+
 
 };
 

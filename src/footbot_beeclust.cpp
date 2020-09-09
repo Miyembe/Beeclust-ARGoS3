@@ -14,6 +14,7 @@ CFootBotBeeClust::CFootBotBeeClust() :
    m_cAlpha(10.0f),
    m_fDelta(0.5f),
    m_fWheelVelocity(2.5f),
+   m_fDriftVelocity(20.0f),
    m_cGoStraightAngleRange(-ToRadians(m_cAlpha),
                            ToRadians(m_cAlpha)) {}
 
@@ -82,12 +83,40 @@ void CFootBotBeeClust::ControlStep() {
    else {
       /* Turn, depending on the sign of the angle */
       if(cAngle.GetValue() > 0.0f) {
-         m_pcWheels->SetLinearVelocity(m_fWheelVelocity, 0.0f);
+         m_pcWheels->SetLinearVelocity(m_fWheelVelocity, m_fDriftVelocity);
       }
       else {
-         m_pcWheels->SetLinearVelocity(0.0f, m_fWheelVelocity);
+         m_pcWheels->SetLinearVelocity(m_fDriftVelocity, m_fWheelVelocity);
       }
    }
+
+//    /* Initialisation of wheel speeds */
+//    m_pcWheels->SetLinearVelocity(m_fWheelVelocity, m_fWheelVelocity);
+//    /* Get readings from proximity sensor */
+//    const CCI_FootBotBeeClustProximitySensor::TReadings& tProxReads = m_pcProximity->GetReadings();
+//    Real cAccumulator;
+//    /* Read the 3 sensor values */
+//    for(size_t i = 0; i < tProxReads.size(); ++i) {
+//       sensor_val[i] = tProxReads[i].Value;
+//       cAccumulator += tProxReads[i].Value;
+//    }
+//    cAccumulator /= tProxReads.size();
+//    Real sensor_r = sensor_val[0];
+//    Real sensor_c = sensor_val[1];
+//    Real sensor_l = sensor_val[2];
+//    if (cAccumulator >= 0.5) {
+//       if (sensor_r > sensor_l) {
+//          m_pcWheels->SetLinearVelocity(m_fWheelVelocity, m_fDriftVelocity);
+//       }
+//       else {
+//          m_pcWheels->SetLinearVelocity(m_fDriftVelocity, m_fWheelVelocity);
+//       }
+//    }
+//    else {
+//       /* go straight */
+//       m_pcWheels->SetLinearVelocity(m_fWheelVelocity, m_fWheelVelocity);
+//    }
+
 }
 
 /****************************************/

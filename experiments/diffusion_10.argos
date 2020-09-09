@@ -24,7 +24,7 @@
       <sensors>
         <footbot_beeclust_proximity implementation="default" show_rays="true" />
       </sensors>
-      <params alpha="7.5" delta="0.1" velocity="5" />
+      <params alpha="7.5" delta="0.05" velocity="6" />
     </footbot_beeclust_controller>
 
     <footbot_diffusion_controller id="fdc"
@@ -94,7 +94,7 @@
     </box>
 
 
-    <foot-bot id="fb_0">
+    <!-- <foot-bot id="fb_0">
       <body position="0,0.5,0" orientation="0,0,0" />
       <controller config="fdc"/>
     </foot-bot>
@@ -102,7 +102,7 @@
     <foot-bot-beeclust id="fbb_0">
       <body position="0,2.0,0" orientation="0,0,0" />
       <controller config="fbc"/>
-    </foot-bot-beeclust>
+    </foot-bot-beeclust> -->
     <!--
         You can distribute entities randomly. Here, we distribute
         10 foot-bots in this way:
@@ -112,15 +112,15 @@
         from a gaussian distribution, whose mean is zero degrees and
         standard deviation is 360 degrees.
     -->
-    <!-- <distribute>
+    <distribute>
       <position method="uniform" min="-5,-5,0" max="5,5,0" />
       <orientation method="gaussian" mean="0,0,0" std_dev="360,0,0" />
-      <entity quantity="50" max_trials="100">
+      <entity quantity="100" max_trials="100">
         <foot-bot-beeclust id="fbb">
           <controller config="fbc" />
         </foot-bot-beeclust>
       </entity>
-    </distribute> -->
+    </distribute>
 
     <!--
         We distribute 5 boxes uniformly in position and rotation around Z.
