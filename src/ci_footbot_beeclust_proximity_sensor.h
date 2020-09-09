@@ -7,6 +7,7 @@ namespace argos {
 
 #include <argos3/core/control_interface/ci_sensor.h>
 #include <argos3/core/utility/math/angles.h>
+#include <argos3/core/simulator/entity/embodied_entity.h>
 
 namespace argos {
 
@@ -27,8 +28,21 @@ namespace argos {
  Angle(c_angle) {}
  };
 
- typedef std::vector<SReading> TReadings;
+ struct SNeighbor {
+ Real Distance;
+ bool Intersect;
+ 
+ SNeighbor() :
+ Distance(0.0f), Intersect(false) {}
 
+ SNeighbor(Real n_distance, bool isIntersect) :
+ Distance(n_distance),
+ Intersect(isIntersect) {}
+ };
+
+ typedef std::vector<SReading> TReadings;
+ //typedef std::vector<Real> Reals;
+ typedef std::vector<SNeighbor> TNeighbors;
  public:
 
  CCI_FootBotBeeClustProximitySensor();
@@ -36,6 +50,8 @@ namespace argos {
  virtual ~CCI_FootBotBeeClustProximitySensor() {}
 
  const TReadings& GetReadings() const;
+ //const Reals& GetDistances() const;
+ const TNeighbors& GetNeighbors() const;
 
 #ifdef ARGOS_WITH_LUA
  virtual void CreateLuaState(lua_State* pt_lua_state);
@@ -46,12 +62,16 @@ namespace argos {
  protected:
 
  TReadings m_tReadings;
+ //Reals m_tDistances;
+ TNeighbors m_tNeighbors;
 
  };
 
  std::ostream& operator<<(std::ostream& c_os, const CCI_FootBotBeeClustProximitySensor::SReading& s_reading);
  std::ostream& operator<<(std::ostream& c_os, const CCI_FootBotBeeClustProximitySensor::TReadings& t_readings);
 
+ std::ostream& operator<<(std::ostream& c_os, const CCI_FootBotBeeClustProximitySensor::SNeighbor& s_neighbor);
+ std::ostream& operator<<(std::ostream& c_os, const CCI_FootBotBeeClustProximitySensor::TNeighbors& t_neighbors);
 }
 
 #endif

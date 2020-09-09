@@ -17,10 +17,12 @@ namespace argos {
  /****************************************/
 
  CCI_FootBotBeeClustProximitySensor::CCI_FootBotBeeClustProximitySensor() :
- m_tReadings(3) {
+ m_tReadings(3), m_tNeighbors(3) {
  for(size_t i = 0; i < 3; ++i) {
  m_tReadings[i].Angle = START_ANGLE + i * SPACING;
  m_tReadings[i].Angle.SignedNormalize();
+ m_tNeighbors[i].Distance = 999.0f;
+ m_tNeighbors[i].Intersect = false;
  }
  }
 
@@ -29,6 +31,17 @@ namespace argos {
 
  const CCI_FootBotBeeClustProximitySensor::TReadings& CCI_FootBotBeeClustProximitySensor::GetReadings() const {
  return m_tReadings;
+ }
+
+//  const CCI_FootBotBeeClustProximitySensor::Reals& CCI_FootBotBeeClustProximitySensor::GetDistances() const {
+//  return m_tDistances;
+//  }
+
+ /****************************************/
+ /****************************************/
+
+ const CCI_FootBotBeeClustProximitySensor::TNeighbors& CCI_FootBotBeeClustProximitySensor::GetNeighbors() const {
+ return m_tNeighbors;
  }
 
  /****************************************/
@@ -44,6 +57,15 @@ namespace argos {
  CLuaUtility::EndTable (pt_lua_state );
  }
  CLuaUtility::CloseRobotStateTable(pt_lua_state);
+
+//  CLuaUtility::OpenRobotStateTable(pt_lua_state, "beeclustNeighbor");
+//  for(size_t i = 0; i < GetNeighbors().size(); ++i) {
+//  CLuaUtility::StartTable(pt_lua_state, i+1 );
+//  CLuaUtility::AddToTable(pt_lua_state, "distance", m_tNeighbors[i].Distance);
+//  CLuaUtility::AddToTable(pt_lua_state, "intersect", m_tNeighbors[i].Intersect);
+//  CLuaUtility::EndTable (pt_lua_state );
+//  }
+//  CLuaUtility::CloseRobotStateTable(pt_lua_state);
  }
 #endif
 
@@ -61,6 +83,16 @@ namespace argos {
  lua_pop(pt_lua_state, 1);
  }
  lua_pop(pt_lua_state, 1);
+
+//  lua_getfield(pt_lua_state, -1, "beeclustNeighbor");
+//  for(size_t i = 0; i < GetNeighbors().size(); ++i) {
+//  lua_pushnumber(pt_lua_state, i+1 );
+//  lua_gettable (pt_lua_state, -2 );
+//  lua_pushnumber(pt_lua_state, m_tNeighbors[i].Distance);
+//  lua_setfield (pt_lua_state, -2, "distance" );
+//  lua_pop(pt_lua_state, 1);
+//  }
+//  lua_pop(pt_lua_state, 1);
  }
 #endif
 
@@ -89,6 +121,31 @@ namespace argos {
  }
  return c_os;
  }
+
+  /****************************************/
+ /****************************************/
+
+//  std::ostream& operator<<(std::ostream& c_os,
+//  const CCI_FootBotBeeClustProximitySensor::SNeighbor& s_neighbor) {
+//  c_os << "Distance=<" << s_neighbor.Distance
+//  << ">, Intesect=<" << s_neighbor.Intersect << ">";
+//  return c_os;
+//  }
+
+//  /****************************************/
+//  /****************************************/
+
+//  std::ostream& operator<<(std::ostream& c_os,
+//  const CCI_FootBotBeeClustProximitySensor::TNeighbors& t_neighbors) {
+//  if(! t_neighbors.empty()) {
+//  c_os << "{ " << t_neighbors[0].Distance << " }";
+//  for(UInt32 i = 1; i < t_neighbors.size(); ++i) {
+//  c_os << " { " << t_neighbors[0].Distance << " }";
+//  }
+//  c_os << std::endl;
+//  }
+//  return c_os;
+//  }
 
  /****************************************/
 /****************************************/

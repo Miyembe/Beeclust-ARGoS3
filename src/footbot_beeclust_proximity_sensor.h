@@ -39,6 +39,8 @@ namespace argos {
 
  virtual Real CalculateReading(Real f_distance);
 
+ virtual Real CalculateNeighborDistance(CEmbodiedEntity* embodied_entity, SEmbodiedEntityIntersectionItem& interstected_robot);
+
  protected:
 
  /** Reference to embodied entity associated to this sensor */

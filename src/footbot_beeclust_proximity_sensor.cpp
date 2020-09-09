@@ -4,17 +4,18 @@
 #include <argos3/core/simulator/simulator.h>
 #include "beeclust_proximity_sensor_equipped_entity.h"
 #include "footbot_beeclust_proximity_sensor.h"
+#include <iostream>
 
 namespace argos {
 
-
+ static const Real BODY_RADIUS = 0.085036758f;
  static CRange<Real> UNIT(0.0f, 1.0f);
 
  /****************************************/
  /****************************************/
 
 
- Real CFootBotBeeClustProximitySensor::CalculateReading(Real f_distance) {
+Real CFootBotBeeClustProximitySensor::CalculateReading(Real f_distance) {
 //  if(f_distance < 0.009889556) {
 //  return 1.0;
 //  }
@@ -22,6 +23,37 @@ namespace argos {
  return 0.0100527 / (f_distance + 0.000163144);
 //  }
  };
+
+/* Calculate distance between the headings of the robot on which this sensor is attached and the robot detected by the center sensor. */
+Real CFootBotBeeClustProximitySensor::CalculateNeighborDistance(CEmbodiedEntity* embodied_entity, 
+                                                                SEmbodiedEntityIntersectionItem& intersected_robot) {
+    CVector3 this_position;
+    CVector3 intersected_position;
+    this_position = embodied_entity->GetOriginAnchor().Position;
+    intersected_position = intersected_robot.IntersectedEntity->GetOriginAnchor().Position;
+
+    CQuaternion this_angle;
+    CQuaternion intersected_angle;
+    this_angle = embodied_entity->GetOriginAnchor().Orientation;
+    intersected_angle = intersected_robot.IntersectedEntity->GetOriginAnchor().Orientation;
+    
+    CVector3 cHeading1;
+    CVector3 cHeading2;
+
+    cHeading1.Set(BODY_RADIUS, 0.0f, 0.0f);
+    cHeading1.Rotate(this_angle);
+    cHeading1 += this_position;
+
+    cHeading2.Set(BODY_RADIUS, 0.0f, 0.0f);
+    cHeading2.Rotate(intersected_angle);
+    cHeading2 += intersected_position;
+
+    Real neighbor_distance;
+
+    neighbor_distance = Distance(cHeading1, cHeading2);
+
+    return neighbor_distance;
+}
 
  /****************************************/
  /****************************************/
@@ -90,6 +122,7 @@ namespace argos {
  CVector3 cRayStart, cRayEnd;
  /* Buffers to contain data about the intersection */
  SEmbodiedEntityIntersectionItem sIntersection;
+ //static CSimulator& cSimulator = CSimulator::GetInstance();
  /* Go through the sensors */
  for(UInt32 i = 0; i < m_tReadings.size(); ++i) {
     /* Compute ray for sensor i */
@@ -113,10 +146,19 @@ namespace argos {
             m_pcControllableEntity->AddCheckedRay(true, cScanningRay);
         }
         m_tReadings[i].Value = CalculateReading(cScanningRay.GetDistance(sIntersection.TOnRay));
+        // std::cout << "The intersected entity with " << m_pcEmbodiedEntity->GetContext() << m_pcEmbodiedEntity->GetId() << "/ position: " << m_pcEmbodiedEntity->GetOriginAnchor().Position \
+        //           << " is: " << sIntersection.IntersectedEntity->GetContext() << sIntersection.IntersectedEntity->GetId() << "/ position: " << sIntersection.IntersectedEntity->GetOriginAnchor().Position\
+        //           << " Neighbor Distance : " << CalculateNeighborDistance(m_pcEmbodiedEntity, sIntersection)
+        //           << std::endl;
+        m_tNeighbors[i].Distance = CalculateNeighborDistance(m_pcEmbodiedEntity, sIntersection);
+        m_tNeighbors[i].Intersect = true;
+        // m_tDistances[i] = CalculateNeighborDistance(m_pcEmbodiedEntity, sIntersection);
         }
     else {
     /* No intersection */
         m_tReadings[i].Value = 0.0f;
+        m_tNeighbors[i].Distance = 969.0f;
+        m_tNeighbors[i].Intersect = false;
         if(m_bShowRays) {
             m_pcControllableEntity->AddCheckedRay(false, cScanningRay);
         }
@@ -136,6 +178,10 @@ namespace argos {
  void CFootBotBeeClustProximitySensor::Reset() {
  for(UInt32 i = 0; i < GetReadings().size(); ++i) {
  m_tReadings[i].Value = 0.0f;
+ }
+ for(UInt32 i = 0; i < GetNeighbors().size(); ++i) {
+ m_tNeighbors[i].Distance = 969.0f;
+ m_tNeighbors[i].Intersect = false;
  }
  }
 

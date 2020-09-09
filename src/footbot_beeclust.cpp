@@ -4,6 +4,7 @@
 #include <argos3/core/utility/configuration/argos_configuration.h>
 /* 2D vector definition */
 #include <argos3/core/utility/math/vector2.h>
+#include <iostream>
 
 /****************************************/
 /****************************************/
@@ -65,10 +66,12 @@ void CFootBotBeeClust::Init(TConfigurationNode& t_node) {
 void CFootBotBeeClust::ControlStep() {
    /* Get readings from proximity sensor */
    const CCI_FootBotBeeClustProximitySensor::TReadings& tProxReads = m_pcProximity->GetReadings();
+   const CCI_FootBotBeeClustProximitySensor::TNeighbors& tNeighbors = m_pcProximity->GetNeighbors();
    /* Sum them together */
    CVector2 cAccumulator;
    for(size_t i = 0; i < tProxReads.size(); ++i) {
       cAccumulator += CVector2(tProxReads[i].Value, tProxReads[i].Angle);
+      std::cout << "Distance Reading : " << tNeighbors[i].Distance << std::endl;
    }
    cAccumulator /= tProxReads.size();
    /* If the angle of the vector is small enough and the closest obstacle
@@ -89,6 +92,7 @@ void CFootBotBeeClust::ControlStep() {
          m_pcWheels->SetLinearVelocity(m_fDriftVelocity, m_fWheelVelocity);
       }
    }
+   
 
 //    /* Initialisation of wheel speeds */
 //    m_pcWheels->SetLinearVelocity(m_fWheelVelocity, m_fWheelVelocity);
