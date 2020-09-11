@@ -29,6 +29,7 @@
 /* Definition of the foot-bot proximity sensor */
 //#include <argos3/plugins/robots/foot-bot/control_interface/ci_footbot_proximity_sensor.h>
 #include "ci_footbot_beeclust_proximity_sensor.h"
+#include "ctimer.h"
 /*
  * All the ARGoS stuff in the 'argos' namespace.
  * With this statement, you save typing argos:: every time.
@@ -79,6 +80,12 @@ public:
     */
    virtual void Destroy() {}
 
+   Real* GetPhero();
+   
+   void SetPhero(Real* pValue);
+
+   int CalculateWaiting (int maxWaitingTime, Real avgPhero);
+
 private:
 
    /* Pointer to the differential steering actuator */
@@ -108,11 +115,25 @@ private:
    Real m_fWheelVelocity;
    /* Wheel Speed for collision avoidance */
    Real m_fDriftVelocity;
-   /* Sensor Value array */
-   Real sensor_val[3];
+   /* Wheel Speed changing by pheromone intensity */
+   Real m_fLeftPheroVelocity;
+   Real m_fRightPheroVelocity;
+   /* Phero Speed related parameters */
+   Real m_bias;
+   Real m_sensitivity;
+   /* Waiting time (ms) based on pheromone value */
+   int m_waitingtime;
    /* Angle tolerance range to go straight.
     * It is set to [-alpha,alpha]. */
    CRange<CRadians> m_cGoStraightAngleRange;
+   
+   /* Timers used for waiting algorithm */
+   CTimer m_waitTimer;
+   CTimer m_escTimer;
+   CTimer m_stuckTimer;
+   bool m_isNeighborClose;
+
+   Real m_pValue[2];
 
 
 

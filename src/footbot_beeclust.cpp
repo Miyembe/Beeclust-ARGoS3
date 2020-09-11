@@ -5,6 +5,11 @@
 /* 2D vector definition */
 #include <argos3/core/utility/math/vector2.h>
 #include <iostream>
+#include "ctimer.h"
+
+/****************************************/
+static const Real BODY_RADIUS = 0.085036758f;
+static const Real MAX_WAITING = 20000000;
 
 /****************************************/
 /****************************************/
@@ -15,7 +20,12 @@ CFootBotBeeClust::CFootBotBeeClust() :
    m_cAlpha(10.0f),
    m_fDelta(0.5f),
    m_fWheelVelocity(2.5f),
-   m_fDriftVelocity(20.0f),
+   m_fDriftVelocity(25.0f),
+   m_fLeftPheroVelocity(0.0f),
+   m_fRightPheroVelocity(0.0f),
+   m_bias(0.0f),
+   m_sensitivity(2.0f),
+   m_isNeighborClose(false),
    m_cGoStraightAngleRange(-ToRadians(m_cAlpha),
                            ToRadians(m_cAlpha)) {}
 
@@ -69,11 +79,22 @@ void CFootBotBeeClust::ControlStep() {
    const CCI_FootBotBeeClustProximitySensor::TNeighbors& tNeighbors = m_pcProximity->GetNeighbors();
    /* Sum them together */
    CVector2 cAccumulator;
+   /* Get proximity & neighbor distance & status if the neighbor is close */
    for(size_t i = 0; i < tProxReads.size(); ++i) {
       cAccumulator += CVector2(tProxReads[i].Value, tProxReads[i].Angle);
       std::cout << "Distance Reading : " << tNeighbors[i].Distance << std::endl;
+      if (tNeighbors[i].Distance <= BODY_RADIUS) {
+         m_isNeighborClose = true;
+      }
    }
    cAccumulator /= tProxReads.size();
+
+   /* Set the wheel speed & waiting time based on the pheromone value */
+   m_sensitivity = 0.2f;
+   m_bias = 10.0f - (m_pValue[0] + m_pValue[1])*4;
+   m_fLeftPheroVelocity = (m_pValue[1] - m_pValue[0])/m_sensitivity + m_bias;
+   m_fRightPheroVelocity = (m_pValue[0] - m_pValue[1])/m_sensitivity + m_bias;
+   m_waitingtime = CalculateWaiting(MAX_WAITING, (m_pValue[0] + m_pValue[1])/2);
    /* If the angle of the vector is small enough and the closest obstacle
     * is far enough, continue going straight, otherwise curve a little
     */
@@ -81,7 +102,7 @@ void CFootBotBeeClust::ControlStep() {
    if(m_cGoStraightAngleRange.WithinMinBoundIncludedMaxBoundIncluded(cAngle) &&
       cAccumulator.Length() < m_fDelta ) {
       /* Go straight */
-      m_pcWheels->SetLinearVelocity(m_fWheelVelocity, m_fWheelVelocity);
+      m_pcWheels->SetLinearVelocity(m_fLeftPheroVelocity, m_fRightPheroVelocity);
    }
    else {
       /* Turn, depending on the sign of the angle */
@@ -92,6 +113,31 @@ void CFootBotBeeClust::ControlStep() {
          m_pcWheels->SetLinearVelocity(m_fDriftVelocity, m_fWheelVelocity);
       }
    }
+   /* Wait timer on when it neighbor is close enough */
+   if (m_isNeighborClose == true && m_waitTimer.paused()) {
+      m_waitTimer.start();
+   }
+
+   /* End escape timer */
+   if (m_escTimer.getTime() > 10000000) {
+      m_escTimer.reset();
+   }
+   
+   /* Waiting for 20s */ 
+   if (!m_waitTimer.paused() && m_waitTimer.getTime() < m_waitingtime && m_escTimer.paused()) {
+       m_pcWheels->SetLinearVelocity(0.0f, 0.0f);
+   }
+   else if (!m_waitTimer.paused() && m_waitTimer.getTime() >= m_waitingtime) {
+      m_waitTimer.reset();
+      m_isNeighborClose = false;
+      m_escTimer.start();
+   }
+   else {
+      m_isNeighborClose = false;
+   }
+   std::cout << "Pheromone Value: " << m_pValue[0] << ", " << m_pValue[1] << std::endl;
+
+
    
 
 //    /* Initialisation of wheel speeds */
@@ -123,6 +169,20 @@ void CFootBotBeeClust::ControlStep() {
 
 }
 
+Real* CFootBotBeeClust::GetPhero() {
+   return m_pValue;
+}
+
+void CFootBotBeeClust::SetPhero(Real* pValue) {
+   m_pValue[0] = pValue[0];
+   m_pValue[1] = pValue[1];
+}
+
+int CFootBotBeeClust::CalculateWaiting(int maxWaitingTime, Real avgPhero) {
+   int waitingTime;
+   waitingTime = (int) (maxWaitingTime * avgPhero);
+   return waitingTime;
+}
 /****************************************/
 /****************************************/
 

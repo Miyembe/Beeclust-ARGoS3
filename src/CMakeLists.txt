@@ -13,6 +13,12 @@ add_library(beeclust SHARED
   footbot_beeclust_entity.h
   dynamics2d_footbot_beeclust_model.cpp
   dynamics2d_footbot_beeclust_model.h
+  ctimer.cpp
+  ctimer.h
+  CPherofield.cpp
+  CPherofield.h
+  beeclust_loop_function.cpp
+  beeclust_loop_function.h
   #beeclust_proximity_default_sensor.h
   #beeclust_proximity_default_sensor.cpp
   #ci_beeclust_proximity_sensor.cpp

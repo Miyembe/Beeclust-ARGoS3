@@ -75,24 +75,41 @@
 
   </controllers>
 
+  <loop_functions library="build/src/libbeeclust"
+                  label="beeclust_loop_functions">
+    <pheromone_field resolution="0.01"/>
+  </loop_functions>
+
   <!-- *********************** -->
   <!-- * Arena configuration * -->
   <!-- *********************** -->
-  <arena size="10, 10, 1" center="0,0,0.5">
+  <arena size="6, 6, 1" center="0,0,0.5">
 
-    <box id="wall_north" size="10,0.1,0.5" movable="false">
-      <body position="0,5,0" orientation="0,0,0" />
+    <box id="wall_north" size="6,0.1,0.5" movable="false">
+      <body position="0,3,0" orientation="0,0,0" />
     </box>
-    <box id="wall_south" size="10,0.1,0.5" movable="false">
-      <body position="0,-5,0" orientation="0,0,0" />
+    <box id="wall_south" size="6,0.1,0.5" movable="false">
+      <body position="0,-3,0" orientation="0,0,0" />
     </box>
-    <box id="wall_east" size="0.1,10,0.5" movable="false">
-      <body position="5,0,0" orientation="0,0,0" />
+    <box id="wall_east" size="0.1,6,0.5" movable="false">
+      <body position="3,0,0" orientation="0,0,0" />
     </box>
-    <box id="wall_west" size="0.1,10,0.5" movable="false">
-      <body position="-5,0,0" orientation="0,0,0" />
+    <box id="wall_west" size="0.1,6,0.5" movable="false">
+      <body position="-3,0,0" orientation="0,0,0" />
     </box>
 
+    <box id="wall_tlcorner" size="0.1,0.5,0.5" movable="false">
+      <body position="2.8,2.8,0" orientation="45,0,0" />
+    </box>
+    <box id="wall_trcorner" size="0.1,0.5,0.5" movable="false">
+      <body position="2.8,-2.8,0" orientation="-45,0,0" />
+    </box>
+    <box id="wall_blcorner" size="0.1,0.5,0.5" movable="false">
+      <body position="-2.8,2.8,0" orientation="-45,0,0" />
+    </box>
+    <box id="wall_brcorner" size="0.1,0.5,0.5" movable="false">
+      <body position="-2.8,-2.8,0" orientation="45,0,0" />
+    </box>
 
     <!-- <foot-bot id="fb_0">
       <body position="0,0.5,0" orientation="0,0,0" />
@@ -113,9 +130,9 @@
         standard deviation is 360 degrees.
     -->
     <distribute>
-      <position method="uniform" min="-5,-5,0" max="5,5,0" />
+      <position method="uniform" min="-2.7,-2.7,0" max="2.7,2.7,0" />
       <orientation method="gaussian" mean="0,0,0" std_dev="360,0,0" />
-      <entity quantity="100" max_trials="100">
+      <entity quantity="50" max_trials="50">
         <foot-bot-beeclust id="fbb">
           <controller config="fbc" />
         </foot-bot-beeclust>

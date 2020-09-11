@@ -140,6 +140,33 @@ beeclust_autogen/fast:
 	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust_autogen.dir/build.make src/CMakeFiles/beeclust_autogen.dir/build
 .PHONY : beeclust_autogen/fast
 
+CPherofield.o: CPherofield.cpp.o
+
+.PHONY : CPherofield.o
+
+# target to build an object file
+CPherofield.cpp.o:
+	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/CPherofield.cpp.o
+.PHONY : CPherofield.cpp.o
+
+CPherofield.i: CPherofield.cpp.i
+
+.PHONY : CPherofield.i
+
+# target to preprocess a source file
+CPherofield.cpp.i:
+	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/CPherofield.cpp.i
+.PHONY : CPherofield.cpp.i
+
+CPherofield.s: CPherofield.cpp.s
+
+.PHONY : CPherofield.s
+
+# target to generate assembly for a file
+CPherofield.cpp.s:
+	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/CPherofield.cpp.s
+.PHONY : CPherofield.cpp.s
+
 beeclust_autogen/mocs_compilation.o: beeclust_autogen/mocs_compilation.cpp.o
 
 .PHONY : beeclust_autogen/mocs_compilation.o
@@ -166,6 +193,33 @@ beeclust_autogen/mocs_compilation.s: beeclust_autogen/mocs_compilation.cpp.s
 beeclust_autogen/mocs_compilation.cpp.s:
 	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/beeclust_autogen/mocs_compilation.cpp.s
 .PHONY : beeclust_autogen/mocs_compilation.cpp.s
+
+beeclust_loop_function.o: beeclust_loop_function.cpp.o
+
+.PHONY : beeclust_loop_function.o
+
+# target to build an object file
+beeclust_loop_function.cpp.o:
+	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/beeclust_loop_function.cpp.o
+.PHONY : beeclust_loop_function.cpp.o
+
+beeclust_loop_function.i: beeclust_loop_function.cpp.i
+
+.PHONY : beeclust_loop_function.i
+
+# target to preprocess a source file
+beeclust_loop_function.cpp.i:
+	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/beeclust_loop_function.cpp.i
+.PHONY : beeclust_loop_function.cpp.i
+
+beeclust_loop_function.s: beeclust_loop_function.cpp.s
+
+.PHONY : beeclust_loop_function.s
+
+# target to generate assembly for a file
+beeclust_loop_function.cpp.s:
+	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/beeclust_loop_function.cpp.s
+.PHONY : beeclust_loop_function.cpp.s
 
 beeclust_proximity_sensor_equipped_entity.o: beeclust_proximity_sensor_equipped_entity.cpp.o
 
@@ -220,6 +274,33 @@ ci_footbot_beeclust_proximity_sensor.s: ci_footbot_beeclust_proximity_sensor.cpp
 ci_footbot_beeclust_proximity_sensor.cpp.s:
 	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/ci_footbot_beeclust_proximity_sensor.cpp.s
 .PHONY : ci_footbot_beeclust_proximity_sensor.cpp.s
+
+ctimer.o: ctimer.cpp.o
+
+.PHONY : ctimer.o
+
+# target to build an object file
+ctimer.cpp.o:
+	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/ctimer.cpp.o
+.PHONY : ctimer.cpp.o
+
+ctimer.i: ctimer.cpp.i
+
+.PHONY : ctimer.i
+
+# target to preprocess a source file
+ctimer.cpp.i:
+	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/ctimer.cpp.i
+.PHONY : ctimer.cpp.i
+
+ctimer.s: ctimer.cpp.s
+
+.PHONY : ctimer.s
+
+# target to generate assembly for a file
+ctimer.cpp.s:
+	cd /home/oer/Seongin/Software/ARGOS/Beeclust/build && $(MAKE) -f src/CMakeFiles/beeclust.dir/build.make src/CMakeFiles/beeclust.dir/ctimer.cpp.s
+.PHONY : ctimer.cpp.s
 
 dynamics2d_footbot_beeclust_model.o: dynamics2d_footbot_beeclust_model.cpp.o
 
@@ -366,15 +447,24 @@ help:
 	@echo "... beeclust"
 	@echo "... edit_cache"
 	@echo "... beeclust_autogen"
+	@echo "... CPherofield.o"
+	@echo "... CPherofield.i"
+	@echo "... CPherofield.s"
 	@echo "... beeclust_autogen/mocs_compilation.o"
 	@echo "... beeclust_autogen/mocs_compilation.i"
 	@echo "... beeclust_autogen/mocs_compilation.s"
+	@echo "... beeclust_loop_function.o"
+	@echo "... beeclust_loop_function.i"
+	@echo "... beeclust_loop_function.s"
 	@echo "... beeclust_proximity_sensor_equipped_entity.o"
 	@echo "... beeclust_proximity_sensor_equipped_entity.i"
 	@echo "... beeclust_proximity_sensor_equipped_entity.s"
 	@echo "... ci_footbot_beeclust_proximity_sensor.o"
 	@echo "... ci_footbot_beeclust_proximity_sensor.i"
 	@echo "... ci_footbot_beeclust_proximity_sensor.s"
+	@echo "... ctimer.o"
+	@echo "... ctimer.i"
+	@echo "... ctimer.s"
 	@echo "... dynamics2d_footbot_beeclust_model.o"
 	@echo "... dynamics2d_footbot_beeclust_model.i"
 	@echo "... dynamics2d_footbot_beeclust_model.s"
